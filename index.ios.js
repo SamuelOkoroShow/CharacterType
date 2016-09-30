@@ -12,6 +12,6 @@ import {
   View
 } from 'react-native';
 
-import AssassinsCreed from './app/container'
+import Assassins from './app/components'
 
-AppRegistry.registerComponent('AssassinsCreed', () => AssassinsCreed);
+AppRegistry.registerComponent('Assassins', () => Assassins);

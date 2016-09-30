@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-class AssassinsCreed extends Component {
+class Assassins extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('AssassinsCreed', () => AssassinsCreed);
+AppRegistry.registerComponent('Assassins', () => Assassins);
