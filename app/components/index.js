@@ -22,12 +22,21 @@ var image4 = require('../images/dudeRed.png');
 var image5 = require('../images/dudeSky.png');
 var image6 = require('../images/dudeYellow.png');
 
+var image7 = require('../images/chickBlue.png');
+var image8 = require('../images/chickGreen.png');
+var image9 = require('../images/chickPurple.png');
+var image10 = require('../images/chickRed.png');
+var image11 = require('../images/chickSky.png');
+var image12 = require('../images/chickYellow.png');
+
 var dudes = [image1, image2, image3, image4, image5, image6]
+var chicks = [image7, image8, image9, image10, image11, image12]
 
 var state = {
-  user:{
+  user: {
     name:'Samuel Okoro',
     image: dudes[0],
+    color: "rgba(32,84,152,0.6)",
     kills: 1431,
     deaths: 113,
     assists: 12,
@@ -40,7 +49,10 @@ var state = {
 export default class Index extends Component {
   constructor(props){
     super(props)
- 
+  
+    this.state = {
+      user: state.user
+    }
   }
  
   renderScene(route, navigator) {
@@ -51,6 +63,7 @@ export default class Index extends Component {
       return (
         <Profile
         {...this.props} 
+        user = {this.state.user}
         navigator={navigator} />
         );
     }

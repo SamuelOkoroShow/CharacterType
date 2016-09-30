@@ -32,6 +32,7 @@ export default class Splash extends Component {
     return (
       <View style={styles.container} >
             <Image source ={require('../images/logo.png')} resizeMode="contain" style={{height:150, width:150}} />
+            <Text style={{textAligin:'center', color:'#333'}}>Nothing Is True {"\n"} Everything is Permited</Text>
       </View>
     );
   }
