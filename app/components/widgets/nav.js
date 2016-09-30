@@ -23,12 +23,33 @@ export default class Slide1 extends Component {
     super(props)
 
     this.state = {
-      width:0
+      width:0,
+      margin1:0,
+      margin2:0,
+      margin3:0,
+      margin4:0,
+      margin5:0
     }
   }
 
-  
+  componentDidMount(){
+        
+        setTimeout(() => {this.runAnimate()}, 2000);
+    
+  }
 
+  runAnimate(){
+     LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+this.setState({
+      width:90,
+      margin1:5,
+      margin2:10,
+      margin3:20,
+      margin4:10,
+      margin5:20,
+
+    });
+  }
   render() {
     return (
       <View style= {{ height:100, justifyContent:'space-between'}}>
@@ -36,19 +57,19 @@ export default class Slide1 extends Component {
       <TouchableOpacity>
       <Image source = {require('../../images/homeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:10}}>
+       <TouchableOpacity style={{marginTop:this.state.margin1}}>
       <Image source = {require('../../images/friendsIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:20}}>
+       <TouchableOpacity style={{marginTop:this.state.margin2}}>
       <Image source = {require('../../images/customizeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:20}}>
+       <TouchableOpacity style={{marginTop:this.state.margin3}}>
       <Image source = {require('../../images/profileIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:0}}>
+       <TouchableOpacity style={{marginTop:this.state.margin4}}>
       <Image source = {require('../../images/progressIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:10}}>
+       <TouchableOpacity style={{marginTop:this.state.margin5}}>
       <Image source = {require('../../images/settingsIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
       </View>
