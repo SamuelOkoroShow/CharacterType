@@ -10,10 +10,31 @@ import {
 } from 'react-native';
 
 
-import Home from './home'
+import Profile from './profile'
 import Splash from './splash'
 
+// I'm going to keep state in this view for this app
+// It's just going to be "signed in User State"
+var image1 = require('../images/dudeBlue.png');
+var image2 = require('../images/dudeGreen.png');
+var image3 = require('../images/dudePurple.png');
+var image4 = require('../images/dudeRed.png');
+var image5 = require('../images/dudeSky.png');
+var image6 = require('../images/dudeYellow.png');
 
+var dudes = [image1, image2, image3, image4, image5, image6]
+
+var state = {
+  user:{
+    name:'Samuel Okoro',
+    image: dudes[0],
+    kills: 1431,
+    deaths: 113,
+    assists: 12,
+    completed_campaigns: 5,
+    friends: 12
+  }
+}
 
 
 export default class Index extends Component {
@@ -26,9 +47,9 @@ export default class Index extends Component {
     var {state,actions} = this.props;
     var routeId = route.id;
 
-    if (routeId === 'home') {
+    if (routeId === 'profile') {
       return (
-        <Home
+        <Profile
         {...this.props} 
         navigator={navigator} />
         );
@@ -40,6 +61,7 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+
     
   
    }
@@ -51,7 +73,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'splash', name: 'splash'}}
+     initialRoute={{id: 'profile', name: 'profile'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
