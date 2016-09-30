@@ -17,26 +17,44 @@ import {
 } from 'react-native';
 
 var {height, width} = Dimensions.get('window');
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class Slide1 extends Component {
   constructor(props){
     super(props)
 
     this.state = {
+      width:0
     }
   }
 
+  
+
   render() {
     return (
-      <View style={{height:50, justifyContent:'space-between', flexDirection:'row', alignItems:'center'}}>
-      <TouchableOpacity style={{ justifyContent:'center', padding:10}}>
-      <Icon name="menu" color="#444" size={21} />
+      <View style= {{ height:100, justifyContent:'space-between'}}>
+      <View style={{height:60, justifyContent:'space-around', marginTop:5, flexDirection:'row', alignItems:'center'}}>
+      <TouchableOpacity>
+      <Image source = {require('../../images/homeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-      <Text>{this.props.text}</Text>
-       <TouchableOpacity style={{ justifyContent:'center', padding:10}}>
-      <Icon name="equalizer" color="#dd580d" size={21} />
+       <TouchableOpacity style={{marginTop:10}}>
+      <Image source = {require('../../images/friendsIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
+       <TouchableOpacity style={{marginTop:20}}>
+      <Image source = {require('../../images/customizeIcon.png')} style={{height:40, width:40}} />
+      </TouchableOpacity>
+       <TouchableOpacity style={{marginTop:20}}>
+      <Image source = {require('../../images/profileIcon.png')} style={{height:40, width:40}} />
+      </TouchableOpacity>
+       <TouchableOpacity style={{marginTop:0}}>
+      <Image source = {require('../../images/progressIcon.png')} style={{height:40, width:40}} />
+      </TouchableOpacity>
+       <TouchableOpacity style={{marginTop:10}}>
+      <Image source = {require('../../images/settingsIcon.png')} style={{height:40, width:40}} />
+      </TouchableOpacity>
+      </View>
+      <View style= {{ padding:5, justifyContent:'center', backgroundColor:"rgba(140,10,10, 0.6)", height:30, borderLeftWidth:3, borderColor:'#fff', margin:10, width:this.state.width, }}>
+      <Text style={{color:'#fff', fontWeight:"500"}}>{this.props.name.toUpperCase()}</Text>
+      </View>
       </View>
     );
   }
