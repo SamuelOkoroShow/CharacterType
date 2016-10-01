@@ -12,6 +12,7 @@ import {
 
 import Profile from './profile'
 import Splash from './splash'
+import Customize from './customize'
 
 // I'm going to keep state in this view for this app
 // It's just going to be "signed in User State"
@@ -67,6 +68,14 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'customize') {
+      return (
+        <Customize
+        {...this.props} 
+        user = {this.state.user}
+        navigator={navigator} />
+        );
+    }
     if (routeId === 'splash') {
       return (
         <Splash
@@ -86,7 +95,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'profile', name: 'profile'}}
+     initialRoute={{id: 'customize', name: 'customize'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )

@@ -41,7 +41,7 @@ export default class Slide1 extends Component {
   runAnimate(){
      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
 this.setState({
-      width:90,
+      width:110,
       margin1:5,
       margin2:10,
       margin3:20,
@@ -52,7 +52,7 @@ this.setState({
   }
   render() {
     return (
-      <View style= {{ height:100, justifyContent:'space-between'}}>
+      <View style= {{ height:100, justifyContent:'space-between', width:width}}>
       <View style={{height:60, justifyContent:'space-around', marginTop:5, flexDirection:'row', alignItems:'center'}}>
       <TouchableOpacity>
       <Image source = {require('../../images/homeIcon.png')} style={{height:40, width:40}} />
