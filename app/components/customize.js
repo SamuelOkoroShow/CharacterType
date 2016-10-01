@@ -30,7 +30,7 @@ export default class Customize extends Component {
             <Image source = {this.props.user.image} style={{flex:8, height:null, width:null}} resizeMode="contain" />
             <View style={{flex:2}}>
             <View style={{flexDirection:'row', justifyContent:'center'}}>
-            <TouchableOpacity style={{height:50, width:50, marginLeft:3, marginRight:3, backgroundColor:this.props.user.color, alignItems:'center', justifyContent:'center'}}>
+            <TouchableOpacity onPress={this.props.prev} style={{height:50, width:50, marginLeft:3, marginRight:3, backgroundColor:this.props.user.color, alignItems:'center', justifyContent:'center'}}>
             <Icon name = "keyboard-arrow-left" color="#fff" size={30} />
             </TouchableOpacity>
             <View style={{height:50, width:240, justifyContent:'center', alignItems:'center', marginLeft:3, marginRight:3, backgroundColor:'rgba(0,0,0,0.5)'}}>
@@ -42,14 +42,14 @@ export default class Customize extends Component {
             </TouchableOpacity>
             </View>
             <View style={{flexDirection:'row', marginTop:5, justifyContent:'center'}}>
-            <TouchableOpacity style={{height:50, alignItems:'center', justifyContent:'center', width:50, marginLeft:3, marginRight:3, backgroundColor:'rgba(0,0,0,0.5)'}}>
+            <TouchableOpacity onPress={this.props.genderSwitch} style={{height:50, alignItems:'center', justifyContent:'center', width:50, marginLeft:3, marginRight:3, backgroundColor:'rgba(0,0,0,0.5)'}}>
             <Icon name = "keyboard-arrow-left" color="#fff" size={30} />
             </TouchableOpacity>
             <View style={{height:50, width:240, marginLeft:3, justifyContent:'center', marginRight:3, backgroundColor:this.props.user.color}}>
 <Text style={{color:'#fff', fontSize:11, margin:2, textAlign:'center'}}>GENDER</Text>
-            <Text style={{color:'#fff', textAlign:'center', margin:2}}>MALE</Text>
+            <Text style={{color:'#fff', textAlign:'center', margin:2}}>{this.props.user.gender.toUpperCase()}</Text>
             </View>
-            <TouchableOpacity style={{height:50, alignItems:'center', justifyContent:'center', width:50, marginLeft:3, marginRight:3, backgroundColor:'rgba(0,0,0,0.5)'}}>
+            <TouchableOpacity onPress={this.props.genderSwitch} style={{height:50, alignItems:'center', justifyContent:'center', width:50, marginLeft:3, marginRight:3, backgroundColor:'rgba(0,0,0,0.5)'}}>
             <Icon name = "keyboard-arrow-right" color="#fff" size={30} />
             </TouchableOpacity>
             </View>

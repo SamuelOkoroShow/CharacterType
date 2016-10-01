@@ -29,15 +29,26 @@ var image10 = require('../images/chickRed.png');
 var image11 = require('../images/chickSky.png');
 var image12 = require('../images/chickYellow.png');
 
+var red = "rgba(140,10,10, 0.6)"
+var yellow = "rgba(165,129,82,0.6)"
+var blue = "rgba(32,84,152,0.6)"
+var green = "rgba(86,145,71,0.6)"
+var sky = "rgba(72,145,163,0.6)"
+var purple = "rgba(132, 66, 140, 0.6)"
+
 var dudes = [image1, image2, image3, image4, image5, image6]
 var chicks = [image7, image8, image9, image10, image11, image12]
+var colors = [blue, green, purple, red, sky, yellow]
 var colorNames = ["BLUE", "GREEN", "PURPLE", "RED", "SKY", "YELLOW"]
 var y = 0;
+var character = dudes;
+var gender = "male";
 var state = {
   user: {
     name:'Samuel Okoro',
     image: dudes[y],
-    color: "rgba(32,84,152,0.6)",
+    color: blue,
+    gender: gender,
     colorName: "BLUE",
     kills: 1431,
     deaths: 113,
@@ -63,10 +74,30 @@ export default class Index extends Component {
     this.setState({
       user: {
       name:'Samuel Okoro',
-      image: dudes[y],
+      image: character[y],
       colorName: colorNames[y],
-      color: "rgba(32,84,152,0.6)",
+      color: colors[y],
       kills: 1431,
+      deaths: 113,
+      gender: gender,
+      assists: 12,
+      completed_campaigns: 5,
+      friends: 12
+    }
+  
+    })}
+ }
+ prevImage(){
+  if(y > 0){
+    y--
+    this.setState({
+      user: {
+      name:'Samuel Okoro',
+      image: character[y],
+      colorName: colorNames[y],
+      color: colors[y],
+      kills: 1431,
+      gender:gender,
       deaths: 113,
       assists: 12,
       completed_campaigns: 5,
@@ -75,6 +106,47 @@ export default class Index extends Component {
   
     })}
  }
+
+ genderSwitch(){
+  if(this.state.user.gender == "male"){
+    gender = "female"
+    character = chicks;
+    this.setState({
+      user: {
+      name:'Samuel Okoro',
+      image: character[y],
+      colorName: colorNames[y],
+      color: colors[y],
+      kills: 1431,
+      gender:gender,
+      deaths: 113,
+      assists: 12,
+      completed_campaigns: 5,
+      friends: 12
+    }
+  
+    })
+  }else{
+    gender = "male"
+    character = dudes;
+    this.setState({
+      user: {
+      name:'Samuel Okoro',
+      image: character[y],
+      colorName: colorNames[y],
+      color: colors[y],
+      kills: 1431,
+      gender:gender,
+      deaths: 113,
+      assists: 12,
+      completed_campaigns: 5,
+      friends: 12
+    }
+  
+    })
+  }
+ }
+
   renderScene(route, navigator) {
     var {state,actions} = this.props;
     var routeId = route.id;
@@ -93,6 +165,8 @@ export default class Index extends Component {
         {...this.props} 
         user = {this.state.user}
         next = {() => this.nextImage()}
+        prev = {() => this.prevImage()}
+        genderSwitch = {() => this.genderSwitch()}
         navigator={navigator} />
         );
     }
