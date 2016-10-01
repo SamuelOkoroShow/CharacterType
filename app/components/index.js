@@ -9,7 +9,6 @@ import {
   View
 } from 'react-native';
 
-
 import Profile from './profile'
 import Splash from './splash'
 import Customize from './customize'
@@ -32,12 +31,14 @@ var image12 = require('../images/chickYellow.png');
 
 var dudes = [image1, image2, image3, image4, image5, image6]
 var chicks = [image7, image8, image9, image10, image11, image12]
-
+var colorNames = ["BLUE", "GREEN", "PURPLE", "RED", "SKY", "YELLOW"]
+var y = 0;
 var state = {
   user: {
     name:'Samuel Okoro',
-    image: dudes[0],
+    image: dudes[y],
     color: "rgba(32,84,152,0.6)",
+    colorName: "BLUE",
     kills: 1431,
     deaths: 113,
     assists: 12,
@@ -56,6 +57,24 @@ export default class Index extends Component {
     }
   }
  
+ nextImage(){
+  if(y < 5){
+    y++
+    this.setState({
+      user: {
+      name:'Samuel Okoro',
+      image: dudes[y],
+      colorName: colorNames[y],
+      color: "rgba(32,84,152,0.6)",
+      kills: 1431,
+      deaths: 113,
+      assists: 12,
+      completed_campaigns: 5,
+      friends: 12
+    }
+  
+    })}
+ }
   renderScene(route, navigator) {
     var {state,actions} = this.props;
     var routeId = route.id;
@@ -73,6 +92,7 @@ export default class Index extends Component {
         <Customize
         {...this.props} 
         user = {this.state.user}
+        next = {() => this.nextImage()}
         navigator={navigator} />
         );
     }
