@@ -34,7 +34,7 @@ export default class Slide1 extends Component {
 
   componentDidMount(){
         
-        setTimeout(() => {this.runAnimate()}, 2000);
+        setTimeout(() => {this.runAnimate()}, 1000);
     
   }
 
@@ -60,10 +60,10 @@ this.setState({
        <TouchableOpacity style={{marginTop:this.state.margin1}}>
       <Image source = {require('../../images/friendsIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:this.state.margin2}}>
+       <TouchableOpacity onPress ={() => this.props.navigator.push({id:'customize'})} style={{marginTop:this.state.margin2}}>
       <Image source = {require('../../images/customizeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:this.state.margin3}}>
+       <TouchableOpacity onPress ={() => this.props.navigator.push({id:'profile'})} style={{marginTop:this.state.margin3}}>
       <Image source = {require('../../images/profileIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
        <TouchableOpacity style={{marginTop:this.state.margin4}}>
