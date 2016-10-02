@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import Profile from './profile'
+import Progress from './progress'
 import Splash from './splash'
 import Customize from './customize'
 
@@ -159,6 +160,14 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'progress') {
+      return (
+        <Progress
+        {...this.props} 
+        user = {this.state.user}
+        navigator={navigator} />
+        );
+    }
     if (routeId === 'customize') {
       return (
         <Customize
@@ -189,7 +198,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'customize', name: 'customize'}}
+     initialRoute={{id: 'progress', name: 'progress'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
