@@ -11,6 +11,7 @@ import {
 
 import Profile from './profile'
 import Progress from './progress'
+import Friends from './friends'
 import Splash from './splash'
 import Customize from './customize'
 
@@ -179,6 +180,14 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'friends') {
+      return (
+        <Friends
+        {...this.props} 
+        user = {this.state.user}
+        navigator={navigator} />
+        );
+    }
     if (routeId === 'splash') {
       return (
         <Splash
@@ -198,7 +207,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'progress', name: 'progress'}}
+     initialRoute={{id: 'friends', name: 'friends'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )

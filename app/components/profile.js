@@ -23,7 +23,7 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <Image source ={require('../images/back.png')} resizeMode="stretch" style={styles.container}>
+      <Image source ={require('../images/back2.png')} resizeMode="stretch" style={styles.container}>
       <Nav {...this.props} name = "Profile" />
       <View style={{alignItems:'center', flexDirection:'row', flex:1, }}>
       <Image source = {this.props.user.image} style={{height:height-50, width:width/2}} resizeMode="contain" />

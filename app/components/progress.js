@@ -75,12 +75,12 @@ export default class Progress extends Component {
   size={70}
   width={3}
   fill={x.progress}
-  tintColor="#00e0ff"
+  tintColor="rgba(140,10,10, 0.6)"
   backgroundColor="#999">
 
    {
     (fill) => (
-        <Text style={{color:'#00e0ff', fontSize:18, fontWeight:'300', position:"absolute", top:23, left:20}}>
+        <Text style={{color:'#777', fontSize:18, fontWeight:'300', position:"absolute", top:23, left:20}}>
         { x.progress }%
       </Text>
     )
@@ -102,7 +102,7 @@ export default class Progress extends Component {
   }
   render() {
     return (
-      <Image resizeMode="contain" source={require('../images/background.jpg')} style={styles.container}>
+      <Image resizeMode="cover" source={require('../images/background.jpg')} style={styles.container}>
       <Nav name = "PROGRESS" {...this.props}/>
          <ListView
           dataSource={this.state.dataSource}

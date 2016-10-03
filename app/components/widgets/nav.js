@@ -57,7 +57,7 @@ this.setState({
       <TouchableOpacity>
       <Image source = {require('../../images/homeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:this.state.margin1}}>
+       <TouchableOpacity onPress ={() => this.props.navigator.push({id:'friends'})} style={{marginTop:this.state.margin1}}>
       <Image source = {require('../../images/friendsIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
        <TouchableOpacity onPress ={() => this.props.navigator.push({id:'customize'})} style={{marginTop:this.state.margin2}}>
@@ -66,12 +66,10 @@ this.setState({
        <TouchableOpacity onPress ={() => this.props.navigator.push({id:'profile'})} style={{marginTop:this.state.margin3}}>
       <Image source = {require('../../images/profileIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:this.state.margin4}}>
+       <TouchableOpacity onPress ={() => this.props.navigator.push({id:'progress'})} style={{marginTop:this.state.margin4}}>
       <Image source = {require('../../images/progressIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
-       <TouchableOpacity style={{marginTop:this.state.margin5}}>
-      <Image source = {require('../../images/settingsIcon.png')} style={{height:40, width:40}} />
-      </TouchableOpacity>
+       
       </View>
       <View style= {{ padding:5, justifyContent:'center', backgroundColor:"rgba(140,10,10, 0.6)", height:30, borderLeftWidth:3, borderColor:'#fff', margin:10, width:this.state.width, }}>
       <Text style={{color:'#fff', fontWeight:"500"}}>{this.props.name.toUpperCase()}</Text>
