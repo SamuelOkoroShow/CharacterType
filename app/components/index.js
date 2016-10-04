@@ -13,6 +13,7 @@ import Profile from './profile'
 import Progress from './progress'
 import Friends from './friends'
 import Splash from './splash'
+import Campaign from './campaign'
 import Customize from './customize'
 
 // I'm going to keep state in this view for this app
@@ -180,6 +181,14 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'campaign') {
+      return (
+        <Campaign
+        {...this.props} 
+        user = {this.state.user}
+        navigator={navigator} />
+        );
+    }
     if (routeId === 'friends') {
       return (
         <Friends
@@ -207,7 +216,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'friends', name: 'friends'}}
+     initialRoute={{id: 'campaign', name: 'campaign'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )

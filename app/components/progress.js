@@ -67,7 +67,9 @@ export default class Progress extends Component {
         <Image source={require('../images/rally.png')} resizeMode="contain" style={{width:100, height:100, alignSelf:'center'}} />
         <Image source={require('../images/aid.png')} resizeMode="contain" style={{width:100, height:100, alignSelf:'center'}} />
         </View>
+        <TouchableOpacity>
         <Image source={x.image} resizeMode="contain" style={{width:160, height:160, alignSelf:'center'}} />
+        </TouchableOpacity>
       <View style={{backgroundColor:'rgba(255,255,255,0)', marginTop:-30, flexDirection:'row', alignItems:'center',}}>
       <View style={{backgroundColor:'rgba(255,255,255,0)', flexDirection:'row', alignItems:'center'}}>
       <AnimatedCircularProgress

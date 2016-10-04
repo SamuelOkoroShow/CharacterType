@@ -54,7 +54,7 @@ this.setState({
     return (
       <View style= {{ height:100, justifyContent:'space-between', width:width}}>
       <View style={{height:60, justifyContent:'space-around', marginTop:5, flexDirection:'row', alignItems:'center'}}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress ={() => this.props.navigator.push({id:'campaign'})} >
       <Image source = {require('../../images/homeIcon.png')} style={{height:40, width:40}} />
       </TouchableOpacity>
        <TouchableOpacity onPress ={() => this.props.navigator.push({id:'friends'})} style={{marginTop:this.state.margin1}}>

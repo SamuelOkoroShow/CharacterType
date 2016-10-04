@@ -63,7 +63,7 @@ export default class Friends extends Component {
     }
   }
   eachfriend(x){
-    return(<TouchableOpacity style={{margin:5, flexDirection:'row', justifyContent:'space-between', borderBottomWidth:1, borderColor:'#fff', height:95, width:width-20, shadowColor: "#000000", shadowOpacity: 0.3, shadowRadius: 3, shadowOffset: { height: 1, width: 0 }, backgroundColor:"rgba(255,255,255,0.3)"}}>
+    return(<TouchableOpacity style={{margin:5, flexDirection:'row', justifyContent:'space-between', borderBottomWidth:1, borderColor:'#fff', height:87, width:width-20, shadowColor: "#000000", shadowOpacity: 0.3, shadowRadius: 3, shadowOffset: { height: 1, width: 0 }, backgroundColor:"rgba(255,255,255,0.3)"}}>
       <Image source={x.image} resizeMode="contain" style={{height:95, width:90}} />
       <View style={{justifyContent:'center',}}>
       <Text style={{color:'#333'}}>{x.name}</Text>
