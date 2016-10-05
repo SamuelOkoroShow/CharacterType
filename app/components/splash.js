@@ -26,13 +26,13 @@ export default class Splash extends Component {
     }
   }
   componentDidMount(){
-    setTimeout( () => this.props.navigator.push({id:"home"}), 3000);
+    setTimeout( () => this.props.navigator.push({id:"campaign"}), 3000);
   }
   render() {
     return (
       <View style={styles.container} >
             <Image source ={require('../images/logo.png')} resizeMode="contain" style={{height:150, width:150}} />
-            <Text style={{textAligin:'center', color:'#333'}}>Nothing Is True {"\n"} Everything is Permited</Text>
+            <Text style={{textAlign:'center', color:'#333'}}>Nothing Is True {"\n"} Everything is Permited</Text>
       </View>
     );
   }

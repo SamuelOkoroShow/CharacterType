@@ -71,8 +71,8 @@ export default class Campaign extends Component {
 
   eachMission(x){
     return(
-      <View>
-<View style={{height:100, flexDirection:'row', width:360, margin:3, alignItems:'center', backgroundColor:'rgba(0,0,0,0.54'}}>
+      <TouchableOpacity>
+<View style={{height:100, flexDirection:'row', width:360, margin:3, alignItems:'center', backgroundColor:'rgba(0,0,0,0.2)'}}>
       <Image source={x.image} style={{height:40, margin:10, width:40}} resizeMode='contain' />
       <View style={{width:280}}>
       <Text style={{color:'#fff', marginBottom:5, fontWeight:'600', textDecorationLine:'underline'}}>{x.name}</Text>
@@ -80,7 +80,7 @@ export default class Campaign extends Component {
       </View>
       </View>
       
-      </View>
+      </TouchableOpacity>
       )
   }
 
@@ -89,15 +89,15 @@ export default class Campaign extends Component {
       <View style={styles.container}>
       <Animated.Image source={require('../images/longBack.jpg')} resizeMode="contain" style={{position:'absolute', left:0, top:0, width:width*4+100, height:height, transform: [{translateX: this._animatedValue}] }} />
       <Nav name="Campaigns" {...this.props} />
-      <View style={{alignItems:'center'}}>
-      <View style={{height:60, width:360, margin:3, marginTop:10, alignItems:'center', justifyContent:'center', backgroundColor:this.props.user.color}}>
+      <View style={{alignItems:'center', flex:1}}>
+      <View style={{height:60, width:360, margin:3, marginTop:10, alignItems:'center', borderLeftWidth:2, borderRightWidth:2, borderColor:'#fff', justifyContent:'center', backgroundColor:this.props.user.color}}>
       <Text style={{color:'#fff',fontWeight:'500'}}>AVAILABLE MISSIONS</Text>
       <Text style={{color:'#fff',fontWeight:'400', fontSize:11}}>(COMMUNITY BUILT)</Text>
       </View>
       <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => this.eachMission(rowData)}
-          style={{marginTop:5}}
+          style={{flex:1}}
         />
       </View>
       </View>
