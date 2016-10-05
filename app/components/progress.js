@@ -59,6 +59,16 @@ export default class Progress extends Component {
       dataSource: ds.cloneWithRows(missions),
     }
   }
+  componentWillMount(){
+    this._animatedValue = new Animated.Value(0);
+  }
+
+ componentDidMount() {
+    Animated.timing(this._animatedValue, {
+        toValue: -900,
+        duration: 61500
+    }).start();
+  }
 
   eachMission(x){
     return(
@@ -105,6 +115,8 @@ export default class Progress extends Component {
   render() {
     return (
       <Image resizeMode="cover" source={require('../images/background.jpg')} style={styles.container}>
+                      <Animated.Image source={require('../images/track.png')} resizeMode="contain" style={{position:'absolute', left:0, top:0, width:width*4+100, height:height, transform: [{translateX: this._animatedValue}] }} />
+
       <Nav name = "PROGRESS" {...this.props}/>
          <ListView
           dataSource={this.state.dataSource}

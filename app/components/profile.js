@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Text,
   Image,
+  Animated,
   Dimensions,
   TouchableOpacity,
   View
@@ -20,10 +21,22 @@ var {height, width} = Dimensions.get('window');
 
 
 export default class Profile extends Component {
+   componentWillMount(){
+    this._animatedValue = new Animated.Value(0);
+  }
+
+ componentDidMount() {
+    Animated.timing(this._animatedValue, {
+        toValue: -900,
+        duration: 61500
+    }).start();
+  }
 
   render() {
     return (
       <Image source ={require('../images/back2.png')} resizeMode="stretch" style={styles.container}>
+                <Animated.Image source={require('../images/track.png')} resizeMode="contain" style={{position:'absolute', left:0, top:0, width:width*4+100, height:height, transform: [{translateX: this._animatedValue}] }} />
+
       <Nav {...this.props} name = "Profile" />
       <View style={{alignItems:'center', flexDirection:'row', flex:1, }}>
       <Image source = {this.props.user.image} style={{height:height-50, width:width/2}} resizeMode="contain" />

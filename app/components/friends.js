@@ -13,6 +13,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  Animated,
   View
 } from 'react-native';
 
@@ -62,6 +63,18 @@ export default class Friends extends Component {
       dataSource: ds.cloneWithRows(friends),
     }
   }
+
+  componentWillMount(){
+    this._animatedValue = new Animated.Value(0);
+  }
+
+ componentDidMount() {
+    Animated.timing(this._animatedValue, {
+        toValue: -900,
+        duration: 61500
+    }).start();
+  }
+
   eachfriend(x){
     return(<TouchableOpacity style={{margin:5, flexDirection:'row', justifyContent:'space-between', borderBottomWidth:1, borderColor:'#fff', height:87, width:width-20, shadowColor: "#000000", shadowOpacity: 0.3, shadowRadius: 3, shadowOffset: { height: 1, width: 0 }, backgroundColor:"rgba(255,255,255,0.3)"}}>
       <Image source={x.image} resizeMode="contain" style={{height:95, width:90}} />
@@ -75,6 +88,7 @@ export default class Friends extends Component {
   render() {
     return (
     <Image source ={require('../images/back3.jpg')} resizeMode="cover" style={styles.container}>
+          <Animated.Image source={require('../images/track.png')} resizeMode="contain" style={{position:'absolute', left:0, top:0, width:width*4+100, height:height, transform: [{translateX: this._animatedValue}] }} />
       <Nav name="Friends" {...this.props} />
        <ListView
           dataSource={this.state.dataSource}
