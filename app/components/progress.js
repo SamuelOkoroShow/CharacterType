@@ -12,6 +12,7 @@ import {
   Image,
   ListView,
   Dimensions,
+  Animated,
   TouchableOpacity,
   View
 } from 'react-native';
