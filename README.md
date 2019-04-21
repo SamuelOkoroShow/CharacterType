@@ -1,10 +1,13 @@
-# AssassinsCreed
-Assassins Creed Swag
+# Character Selection Tool
+In this repository, I demo an open source version of how i currently craft synchronous and asychronus and  data flow(Reflux).  This is Reflux with Context in Platform Native React.
 
-# Demo 
+# Youtube Demo Here 
 https://youtu.be/gU3Ob4U3eXY
 
-# Launch WhatsApp
+# Launch
 - Clone
-- Npm install in terminal
-- Run on IOS simulator or Android emulator
+- Copy from App folder
+- Run on your current Expo Project.
+
+
+
